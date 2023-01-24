@@ -1,17 +1,29 @@
 #include<stdio.h>
+#include<math.h>
 int main()
 {
-	int n,a[100],c=0;
-	scanf("%d",&n);
-	for (int i=0;i<n;i++)
-	{
-		scanf("%d",&a[i]);
-	}
-	for(int i=0;i<n;i++)
+    int arr[1000];
+    int i,n,c=0,count=0;
+    int evenSum=0,oddSum=0;
+    scanf("%d",&n);
+    for (i=0;i<n;i++) {
+        scanf("%d",&arr[i]);
+    }
+     for(int i=0;i<n;i++)
     {
-        if(a[i]%2!=0 && i%2==0)
+        if(i%2==0)
         {
-            c++;
+            if(arr[i]%2!=0)
+            {
+                c++;
+            }
+        }
+        else
+        {
+            if(arr[i]%2==0)
+            {
+                count++;
+            }
         }
     }
     if(c==0)
